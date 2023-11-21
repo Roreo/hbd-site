@@ -359,6 +359,7 @@ export async function getPage(handle: string): Promise<Page> {
     variables: { handle }
   });
 
+  console.log('RORY!!!!!!!', res.body.data.pageByHandle);
   return res.body.data.pageByHandle;
 }
 

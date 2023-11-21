@@ -11,6 +11,31 @@ const pageFragment = /* GraphQL */ `
       seo {
         ...seo
       }
+      metafield(key: "hero", namespace: "custom") {
+        value
+        type
+        id
+        reference {
+          ... on Metaobject {
+            id
+            handle
+            fields {
+              key
+              value
+              type
+              reference {
+                ... on MediaImage {
+                  id
+                  image {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+        description
+      }
       createdAt
       updatedAt
     }
